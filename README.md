@@ -74,9 +74,3 @@ Os resultados demonstram que diferentes estratégias de escalonamento apresentam
 O projeto utiliza dados simulados e considera colaboradores com capacidade equivalente, sem dependências entre tarefas ou interrupção de atividades.
 
 Os resultados são restritos às condições estabelecidas no experimento.
-
-## Autoria
-
-**Mirella Oliveira**
-
-Projeto acadêmico desenvolvido no curso de Ciência da Computação.
