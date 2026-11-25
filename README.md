@@ -1,76 +1,95 @@
 # SmartTask Scheduler
 
-Projeto acadêmico desenvolvido em Python para implementar e comparar algoritmos de escalonamento de tarefas em equipes empresariais.
+Sistema desenvolvido em Python para simular e comparar algoritmos de escalonamento de tarefas, com foco na distribuição de atividades entre colaboradores de uma equipe.
+
+O projeto busca analisar como diferentes estratégias de escalonamento influenciam a distribuição da carga de trabalho, o tempo total de execução e o cumprimento de prazos.
 
 ## Objetivo
 
-Analisar diferentes estratégias de distribuição de tarefas entre colaboradores, considerando o tempo total de execução, a distribuição da carga de trabalho e o cumprimento de prazos.
+Desenvolver uma aplicação capaz de organizar tarefas e distribuí-las entre colaboradores, permitindo comparar diferentes algoritmos de escalonamento e observar seus resultados em diferentes cenários.
 
 ## Algoritmos implementados
 
-- **FIFO (First In, First Out):** executa as tarefas conforme a ordem de chegada.
-- **SJF (Shortest Job First):** prioriza as tarefas de menor duração.
-- **GREEDY:** utiliza uma estratégia gulosa baseada em prioridade, prazo e duração das tarefas.
+O sistema implementa três estratégias de escalonamento:
+
+- **FIFO (First In, First Out):** executa as tarefas conforme a ordem de entrada.
+- **SJF (Shortest Job First):** prioriza as tarefas com menor duração.
+- **GREEDY:** utiliza uma estratégia gulosa para selecionar tarefas considerando critérios de prioridade, prazo e duração.
+
+## Funcionalidades
+
+- Cadastro de colaboradores.
+- Definição do nível de experiência dos colaboradores.
+- Cadastro de tarefas com duração, prioridade, complexidade e prazo.
+- Distribuição de tarefas conforme a compatibilidade entre a experiência do colaborador e a complexidade da atividade.
+- Comparação dos resultados dos algoritmos FIFO, SJF e GREEDY.
+- Identificação de tarefas não atribuídas.
+- Cálculo da carga de trabalho por colaborador.
+- Cálculo do tempo total de execução (*makespan*).
+- Identificação de tarefas atrasadas.
+- Cálculo do desvio padrão da distribuição de carga.
+- Cálculo do atraso médio das tarefas.
 
 ## Tecnologias utilizadas
 
 - Python 3
-- Visual Studio Code
-- Git e GitHub
-
-## Funcionalidades
-
-- Simulação de tarefas empresariais.
-- Distribuição automática de tarefas entre colaboradores.
-- Cálculo do tempo total de execução (*makespan*).
-- Identificação de tarefas atrasadas.
-- Análise da distribuição da carga de trabalho.
-- Comparação entre algoritmos de escalonamento.
+- Biblioteca `unittest` para testes automatizados
 
 ## Como executar
 
-Clone o repositório:
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/mirellaLais/smarttask-scheduler.git
+   ```
+
+2. Acesse a pasta do projeto:
+
+   ```bash
+   cd smarttask-scheduler
+   ```
+
+3. Execute o programa:
+
+   ```bash
+   python smarttask_scheduler.py
+   ```
+
+4. Siga as instruções apresentadas no terminal para cadastrar os colaboradores e as tarefas.
+
+## Testes automatizados
+
+O projeto possui testes automatizados desenvolvidos com a biblioteca `unittest`, contemplando:
+
+- Execução das políticas de escalonamento.
+- Verificação da restrição de compatibilidade entre colaboradores e tarefas.
+- Identificação de tarefas sem colaboradores compatíveis.
+- Validação de políticas de escalonamento inválidas.
+
+Para executar os testes:
 
 ```bash
-git clone https://github.com/mirellaLais/smarttask-scheduler.git
+python smarttask_scheduler.py --testes
 ```
 
-Entre na pasta:
+## Avaliação dos resultados
 
-```bash
-cd smarttask-scheduler
-```
+A aplicação permite comparar o comportamento dos três algoritmos a partir dos mesmos dados de entrada.
 
-Execute o programa:
+Os resultados são apresentados considerando indicadores como:
 
-```bash
-python smarttask_scheduler.py
-```
+- Distribuição da carga de trabalho.
+- Tempo total de execução.
+- Quantidade de tarefas atrasadas.
+- Desvio padrão da carga de trabalho.
+- Atraso médio das tarefas.
 
-No Windows, caso necessário, utilize:
+Essa comparação permite observar as diferenças entre as estratégias e compreender como cada algoritmo pode influenciar a organização das atividades de uma equipe.
 
-```bash
-py smarttask_scheduler.py
-```
+## Limitações
 
-## Resultados da simulação inicial
+O sistema utiliza níveis de experiência e complexidade como critérios simplificados de compatibilidade. Esses níveis não representam especializações técnicas específicas.
 
-Experimento realizado com 12 tarefas e 3 colaboradores.
+Além disso, a simulação considera tarefas sem dependências entre si e não contempla interrupções ou ausências de colaboradores.
 
-| Métrica | FIFO | SJF | GREEDY |
-|---|---:|---:|---:|
-| Tempo total (horas) | 10 | 11 | 11 |
-| Tarefas atrasadas | 1 | 3 | 0 |
-| Desvio padrão da carga | 0,47 | 1,25 | 0,94 |
-
-### Análise
-
-O FIFO apresentou o menor tempo total de execução, enquanto o GREEDY obteve o melhor resultado no cumprimento dos prazos, sem registrar tarefas atrasadas.
-
-Os resultados demonstram que diferentes estratégias de escalonamento apresentam vantagens distintas, dependendo dos critérios considerados.
-
-## Considerações
-
-O projeto utiliza dados simulados e considera colaboradores com capacidade equivalente, sem dependências entre tarefas ou interrupção de atividades.
-
-Os resultados são restritos às condições estabelecidas no experimento.
+**SmartTask Scheduler — Organização inteligente de tarefas e distribuição de trabalho.**
